@@ -160,18 +160,7 @@ budget-plan/
    Copy-Item -Path .\budget-plan\* -Destination 'C:\xampp\htdocs\budget-plan' -Recurse
    ```
 
-3. **Run Installer**: 
-   - Open http://localhost/budget-plan/Cursor%20Web/install.php
-   - Follow the setup wizard:
-     - System requirements check
-     - Database configuration
-     - Tables initialization
-     - Sample data (optional)
 
-Alternative setup (CLI):
-```powershell
-php "Cursor Web/create_database.php"
-```
 
 > 🔒 **Security Note**: The installer is localhost-restricted. Remove `install.php` after setup.
 
