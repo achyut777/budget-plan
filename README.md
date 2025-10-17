@@ -1,143 +1,285 @@
-# Budget Planner
+# 💰 Budget Planner
 
-A complete personal finance web application (PHP + MySQL) for tracking income, expenses, budgets, and goals. This repository contains the application code (under `Cursor Web/`), APIs, SQL schemas and supporting documentation.
+A comprehensive personal finance management system built with PHP & MySQL. Track expenses, set goals, manage budgets, and get insights into your financial habits—all in one secure application.
+
+![Version](https://img.shields.io/badge/Version-1.0-blue)
+![PHP](https://img.shields.io/badge/PHP-7.4%2B-purple)
+![MySQL](https://img.shields.io/badge/MySQL-8.0%2B-orange)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 ---
 
-## Quick summary
+## 📑 Table of Contents
 
-- Project: Budget Planner
-- Primary language: PHP (7.4+)
-- Database: MySQL / MariaDB
-- UI: Bootstrap
-- Main application folder: `Cursor Web/`
+- [Quick Summary](#-quick-summary)
+- [System Architecture](#-system-architecture)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Repository Structure](#-repository-structure)
+- [Requirements](#-requirements)
+- [Installation](#-installation)
+- [Configuration](#-configuration)
+- [Database Schema](#-database-schema)
+- [Security](#-security)
+- [API Documentation](#-api-documentation)
+- [Contributing](#-contributing)
+- [Support](#-support)
 
-This README covers how to get started locally (Windows/XAMPP), how to configure the app, where to find key scripts, and troubleshooting pointers. More detailed end-user and developer docs live in `documentation/README.md` — use that as the canonical guide for features and advanced usage.
+## 🎯 Quick Summary
 
-## Contents of this repo
+- **Project Type**: Personal Finance Management System
+- **Architecture**: Multi-tier PHP web application
+- **Primary Language**: PHP 7.4+
+- **Database**: MySQL 8.0+ / MariaDB
+- **UI Framework**: Bootstrap 5.3
+- **Main Directory**: `Cursor Web/`
 
-- `Cursor Web/` — main PHP application (public-facing pages, admin panel, install scripts)
-- `api/` — REST-like API endpoints used by the frontend
-- `assets/` — CSS, JS and image assets
-- `config/` — application configuration files (database, email, init scripts)
-- `sql/` — SQL schemas and helpers (e.g. `remember_tokens.sql`)
-- `documentation/` — detailed documentation and guides
-- `logs/` — runtime logs (created at runtime, ensure webserver write access)
-- `LICENSE` — project license (MIT)
+## 🏗 System Architecture
 
-## Minimum requirements
+The Budget Planner follows a multi-tier architecture:
 
-- PHP 7.4 or later (mysqli, json, openssl recommended)
-- MySQL 8.0+ or compatible MariaDB
-- Apache or Nginx (or a local dev server such as XAMPP/WAMP)
-- Composer is optional (project doesn't require it by default)
-
-## Quick start (Windows + XAMPP)
-
-1. Install XAMPP (or similar) and start Apache + MySQL.
-2. Copy or clone the repository into your web root (for XAMPP, typically `C:\xampp\htdocs\`). Example in PowerShell:
-
-```powershell
-# clone into your workspace (example)
-git clone https://github.com/achyut777/budget-plan.git
-
-# copy to XAMPP htdocs (adjust paths as needed)
-Copy-Item -Path .\budget-plan\* -Destination 'C:\xampp\htdocs\budget-plan' -Recurse
+```mermaid
+graph TB
+    A[Client Layer] --> B[Web Layer]
+    B --> C[Business Layer]
+    C --> D[Data Layer]
+    
+    subgraph "Frontend"
+    A[Client Layer]
+    end
+    
+    subgraph "Application Server"
+    B[Web Layer]
+    C[Business Layer]
+    end
+    
+    subgraph "Database"
+    D[Data Layer]
+    end
 ```
 
-3. Run the installer in a browser:
+### Database Schema
 
-Open: http://localhost/budget-plan/Cursor%20Web/install.php
+Below is the simplified ER diagram showing core entities and their relationships:
 
-The installer will:
+```plaintext
+┌──────────┐     ┌──────────┐     ┌──────────┐
+│   User   │     │Category  │     │Transaction│
+├──────────┤     ├──────────┤     ├──────────┤
+│ id       │1───<│ id       │1───<│ id       │
+│ name     │     │ user_id  │     │ user_id  │
+│ email    │     │ name     │     │ cat_id   │
+│ password │     │ type     │     │ amount   │
+└──────────┘     └──────────┘     └──────────┘
+      │                │                │
+      │                │                │
+      v                v                v
+┌──────────┐     ┌──────────┐     ┌──────────┐
+│  Goals   │     │ Budget   │     │  Admin   │
+├──────────┤     ├──────────┤     ├──────────┤
+│ id       │     │ id       │     │ id       │
+│ user_id  │     │ user_id  │     │ name     │
+│ target   │     │ cat_id   │     │ email    │
+└──────────┘     └──────────┘     └──────────┘
+```
 
-- Check server requirements
-- Save DB configuration to `Cursor Web/config/database.php`
-- Initialize the database tables and (optionally) sample data
+Detailed diagrams available in:
+- `diagrams/budget_planner_er_diagram.puml` - Complete ER diagram
+- `diagrams/admin_er_diagram.dbml` - Admin perspective
+- `diagrams/user_er_diagram.dbml` - User perspective
 
-Alternatively, for a minimal database creation you can run (PowerShell in repository root):
+## 📂 Repository Structure
 
+```plaintext
+budget-plan/
+├── 📱 Cursor Web/        # Main application
+│   ├── admin/           # Admin panel
+│   ├── api/            # API endpoints
+│   ├── config/         # Configuration
+│   └── assets/         # Static files
+├── 📊 diagrams/         # ER & architecture diagrams
+├── 📚 documentation/    # Detailed guides
+├── 🔧 sql/             # Database scripts
+└── 📝 LICENSE          # MIT License
+```
+
+## 💻 Requirements
+
+### System Requirements Matrix
+
+| Requirement | Minimum | Recommended |
+|------------|---------|-------------|
+| PHP | 7.4 | 8.0+ |
+| MySQL | 8.0 | 8.0+ |
+| Web Server | Apache 2.4 | Apache 2.4+ / Nginx |
+| SSL | Optional (Dev) | Required (Prod) |
+| RAM | 2GB | 4GB+ |
+| Storage | 500MB | 1GB+ |
+
+### Required PHP Extensions
+- mysqli
+- json
+- openssl
+- session
+- mbstring
+
+## ✨ Features
+
+### 💳 Financial Management
+- **Transaction Tracking**: Log income & expenses with categories
+- **Budget Planning**: Set and monitor category-wise budgets
+- **Goal Setting**: Create and track financial objectives
+- **Tax Planning**: Manage deductions and calculate savings
+
+### 📊 Analytics & Reports
+- **Visual Dashboard**: Interactive charts and trends
+- **Monthly Reports**: Income vs. expenses analysis
+- **Category Analysis**: Expense distribution insights
+- **Progress Tracking**: Goal achievement monitoring
+
+### 🔐 Security Features
+- **Email Verification**: Secure account creation
+- **Remember Me**: Secure token-based authentication
+- **Admin Panel**: Complete system administration
+- **Session Management**: Auto-timeout and protection
+
+## 🚀 Installation
+
+### Quick Start (Windows + XAMPP)
+
+1. **Install Prerequisites**
+   ```powershell
+   # Install XAMPP (if not installed)
+   # Start Apache and MySQL
+   ```
+
+2. **Clone Repository**
+   ```powershell
+   git clone https://github.com/achyut777/budget-plan.git
+   Copy-Item -Path .\budget-plan\* -Destination 'C:\xampp\htdocs\budget-plan' -Recurse
+   ```
+
+3. **Run Installer**: 
+   - Open http://localhost/budget-plan/Cursor%20Web/install.php
+   - Follow the setup wizard:
+     - System requirements check
+     - Database configuration
+     - Tables initialization
+     - Sample data (optional)
+
+Alternative setup (CLI):
 ```powershell
-# Run PHP script that creates the database and tables (may output to terminal)
 php "Cursor Web/create_database.php"
 ```
 
-Note: The installer is intentionally restricted to localhost for security. After installation remove `Cursor Web/install.php`.
+> 🔒 **Security Note**: The installer is localhost-restricted. Remove `install.php` after setup.
 
-## Configuration
+## ⚙️ Configuration
 
-- Database: `Cursor Web/config/database.php` — set host, username, password, database name and port.
-- Email: `Cursor Web/config/email_config.php` — configure SMTP or from-address for production.
-- Init DB: `Cursor Web/config/init_db.php` — contains table creation and seed logic used by the installer.
+### 1. Database Settings (`Cursor Web/config/database.php`)
+```php
+private static $host = 'localhost';
+private static $username = 'root';
+private static $password = '';
+private static $database = 'budget_planner';
+```
 
-Make sure the webserver user can write to `Cursor Web/logs/` so email logs and app logs can be stored during development.
+### 2. Email Configuration (`Cursor Web/config/email_config.php`)
+- Development: Emails saved to `logs/emails/`
+- Production: Configure SMTP settings
 
-## Default / demo accounts
+### 3. Default Accounts
+| Type | Email | Password | Notes |
+|------|--------|----------|-------|
+| Admin | admin@budgetplanner.com | admin123 | Change immediately |
+| Demo | demo@example.com | demo12345 | Sample data included |
 
-- Admin: `admin@budgetplanner.com` / `admin123` (created by the initializer)
-- Demo user: `demo@example.com` / `demo12345`
+### 4. Development Tools
+- **Email Viewer**: `Cursor Web/email_viewer.php`
+- **DB Reset**: `Cursor Web/config/init_db.php`
+- **Logs Directory**: Ensure `Cursor Web/logs/` is writable
 
-Change default passwords immediately on production and remove the installer file.
+## 🛠 Tech Stack
 
-## Running and testing the app
+| Category | Technologies |
+|----------|-------------|
+| **Backend** | PHP 7.4+, MySQL 8.0+ |
+| **Frontend** | Bootstrap 5.3, JavaScript |
+| **Security** | CSRF Protection, Password Hashing |
+| **APIs** | RESTful Endpoints |
+| **Testing** | PHPUnit (recommended) |
+| **Documentation** | Markdown, PlantUML |
 
-- Development: open the site in a browser on localhost.
-- Email testing: on dev, emails are saved to `Cursor Web/logs/emails/` and a simple viewer exists at `Cursor Web/email_viewer.php`.
-- Reset DB: run `Cursor Web/config/init_db.php` (via the installer interface or directly) to recreate tables + sample data.
+## 🔒 Security
 
-## Important scripts & files
+### Security Features
+- ✅ SQL Injection Protection
+- ✅ XSS Prevention
+- ✅ CSRF Protection
+- ✅ Secure Password Storage
+- ✅ Rate Limiting
+- ✅ Session Security
 
-- `Cursor Web/install.php` — installation wizard (interactive)
-- `Cursor Web/create_database.php` — script to create the database and tables from CLI or browser
-- `sql/remember_tokens.sql` — example SQL for persistent login tokens
-- `Cursor Web/reset_database.php` — reset script (if present)
+### Deployment Checklist
+1. Remove `install.php`
+2. Set strong DB credentials
+3. Enable HTTPS
+4. Configure secure headers
+5. Set proper file permissions
+6. Setup regular backups
 
-## Security notes (deployment checklist)
+Detailed guide: `documentation/DEPLOYMENT-CHECKLIST-CURSOR.md`
 
-- Remove or secure `Cursor Web/install.php` after installing.
-- Set strong, unique passwords for DB and admin accounts.
-- Use HTTPS in production and configure your server for secure headers.
-- Configure proper file permissions (logs writable by the webserver but code files not world-writable).
-- Regular backups of the MySQL database (use `mysqldump` or managed backups).
+## 🔌 API Documentation
 
-Refer to `documentation/DEPLOYMENT-CHECKLIST-CURSOR.md` for a detailed checklist.
+### Available Endpoints
 
-## Troubleshooting (common issues)
+| Endpoint | Description | Auth Required |
+|----------|-------------|---------------|
+| `/api/transactions/` | Manage transactions | Yes |
+| `/api/categories/` | Category operations | Yes |
+| `/api/goals/` | Goal tracking | Yes |
+| `/api/reports/` | Generate reports | Yes |
 
-- Database connection failed: verify credentials in `Cursor Web/config/database.php` and ensure MySQL service is running.
-- Emails appear not to send: check `Cursor Web/logs/emails/` (development) and `Cursor Web/config/email_config.php` for production SMTP settings.
-- Permission errors: grant appropriate write permissions for the `logs/` directory.
+Full API docs in `documentation/README.md`
 
-## Development & contributing
+## 🔧 Troubleshooting
 
-We welcome contributions. Please follow the guidelines in `documentation/README.md` and:
+| Issue | Solution |
+|-------|----------|
+| Database Connection | Check credentials & MySQL service |
+| Email Sending | Verify SMTP settings or check `logs/emails/` |
+| Permissions | Grant write access to `logs/` directory |
+| Installation | Run installer on localhost only |
 
-1. Fork the repo
-2. Create a feature branch
-3. Run and test locally
-4. Submit a pull request with a clear description and tests (if applicable)
+## 🤝 Contributing
 
-Code style & safety
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-- Use prepared statements and input validation for DB queries.
-- Escape output in templates to prevent XSS.
-- Add migrations or update `Cursor Web/config/init_db.php` when changing schema.
+### Coding Standards
+- Use prepared statements
+- Validate all inputs
+- Document API changes
+- Add tests for new features
+- Follow PSR standards
 
-## Where to find more documentation
+See `documentation/README.md` for detailed guidelines.
 
-- Full user & developer documentation: `documentation/README.md`
-- Deployment checklist: `documentation/DEPLOYMENT-CHECKLIST-CURSOR.md`
-- Export guide: `documentation/EXPORT-DOCUMENTATION.md`
+## 💡 Support
 
-## License
+- 📧 Email: support@budgetplanner.com
+- 📚 Wiki: [Documentation](documentation/README.md)
+- 🐛 Issues: [GitHub Issues](https://github.com/achyut777/budget-plan/issues)
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
-If you'd like, I can also:
-
-- Copy parts of the `documentation/README.md` into this top-level README or keep it as a short landing with links to `documentation/` (recommended).
-- Add a short `CONTRIBUTING.md` and `CODE_OF_CONDUCT.md`.
-
-Made with care — enjoy exploring and improving your finances.
+Made with ❤️ by the Budget Planner Team
