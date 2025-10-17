@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Elements -->
+    <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.1"/>
+            <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.3"/>
+        </linearGradient>
+    </defs>
+    
+    <!-- Main Chart -->
+    <path d="M100,500 L200,400 L300,450 L400,300 L500,350 L600,200 L700,250" 
+          fill="none" stroke="#0d6efd" stroke-width="4"/>
+    
+    <!-- Chart Points -->
+    <circle cx="100" cy="500" r="8" fill="#0d6efd"/>
+    <circle cx="200" cy="400" r="8" fill="#0d6efd"/>
+    <circle cx="300" cy="450" r="8" fill="#0d6efd"/>
+    <circle cx="400" cy="300" r="8" fill="#0d6efd"/>
+    <circle cx="500" cy="350" r="8" fill="#0d6efd"/>
+    <circle cx="600" cy="200" r="8" fill="#0d6efd"/>
+    <circle cx="700" cy="250" r="8" fill="#0d6efd"/>
+    
+    <!-- Coins -->
+    <circle cx="150" cy="200" r="40" fill="#ffd700"/>
+    <text x="150" y="215" text-anchor="middle" fill="#fff" font-size="24">$</text>
+    
+    <circle cx="650" cy="400" r="40" fill="#ffd700"/>
+    <text x="650" y="415" text-anchor="middle" fill="#fff" font-size="24">$</text>
+    
+    <!-- Calculator -->
+    <rect x="300" y="100" width="200" height="250" rx="10" fill="#333"/>
+    <rect x="320" y="120" width="160" height="40" fill="#eee"/>
+    <text x="400" y="150" text-anchor="middle" fill="#333" font-size="24">12345</text>
+    
+    <!-- Calculator Buttons -->
+    <rect x="320" y="180" width="40" height="40" rx="5" fill="#666"/>
+    <rect x="370" y="180" width="40" height="40" rx="5" fill="#666"/>
+    <rect x="420" y="180" width="40" height="40" rx="5" fill="#666"/>
+    
+    <rect x="320" y="230" width="40" height="40" rx="5" fill="#666"/>
+    <rect x="370" y="230" width="40" height="40" rx="5" fill="#666"/>
+    <rect x="420" y="230" width="40" height="40" rx="5" fill="#666"/>
+    
+    <rect x="320" y="280" width="40" height="40" rx="5" fill="#666"/>
+    <rect x="370" y="280" width="40" height="40" rx="5" fill="#666"/>
+    <rect x="420" y="280" width="40" height="40" rx="5" fill="#666"/>
+</svg> 

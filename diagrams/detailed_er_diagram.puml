@@ -1,0 +1,143 @@
+@startuml BudgetPlannerERDiagram
+
+skinparam backgroundColor white
+skinparam rectangle {
+    BackgroundColor lightyellow
+    BorderColor darkblue
+    FontColor black
+}
+skinparam ellipse {
+    BackgroundColor lightcyan
+    BorderColor darkgreen
+    FontColor black
+}
+skinparam diamond {
+    BackgroundColor lightpink
+    BorderColor darkred
+    FontColor black
+}
+
+title Budget Planner - Complete ER Diagram
+
+rectangle Admin as admin
+ellipse "id_PK" as admin_id
+ellipse "name" as admin_name  
+ellipse "email" as admin_email
+ellipse "password" as admin_password
+ellipse "created_at" as admin_created
+
+rectangle User as user
+ellipse "id_PK" as user_id
+ellipse "name" as user_name
+ellipse "email" as user_email
+ellipse "password" as user_password
+ellipse "is_premium" as user_premium
+ellipse "created_at" as user_created
+ellipse "updated_at" as user_updated
+
+rectangle Category as category
+ellipse "id_PK" as cat_id
+ellipse "user_id_FK" as cat_user_id
+ellipse "name" as cat_name
+ellipse "type" as cat_type
+ellipse "created_at" as cat_created
+
+rectangle Transaction as transaction
+ellipse "id_PK" as trans_id
+ellipse "user_id_FK" as trans_user_id
+ellipse "category_id_FK" as trans_cat_id
+ellipse "amount" as trans_amount
+ellipse "description" as trans_desc
+ellipse "date" as trans_date
+ellipse "created_at" as trans_created
+
+rectangle Goal as goal
+ellipse "id_PK" as goal_id
+ellipse "user_id_FK" as goal_user_id
+ellipse "name" as goal_name
+ellipse "target_amount" as goal_target
+ellipse "current_amount" as goal_current
+ellipse "deadline" as goal_deadline
+ellipse "created_at" as goal_created
+
+rectangle Budget_Limit as budget
+ellipse "id_PK" as budget_id
+ellipse "user_id_FK" as budget_user_id
+ellipse "category_id_FK" as budget_cat_id
+ellipse "amount" as budget_amount
+ellipse "period" as budget_period
+ellipse "created_at" as budget_created
+
+diamond "manages" as manages
+diamond "creates" as creates
+diamond "has" as has_trans
+diamond "sets" as sets_goal
+diamond "defines" as defines_budget
+diamond "categorizes" as categorizes
+diamond "limits" as limits
+
+admin_id -- admin
+admin_name -- admin
+admin_email -- admin
+admin_password -- admin
+admin_created -- admin
+
+user_id -- user
+user_name -- user
+user_email -- user
+user_password -- user
+user_premium -- user
+user_created -- user
+user_updated -- user
+
+cat_id -- category
+cat_user_id -- category
+cat_name -- category
+cat_type -- category
+cat_created -- category
+
+trans_id -- transaction
+trans_user_id -- transaction
+trans_cat_id -- transaction
+trans_amount -- transaction
+trans_desc -- transaction
+trans_date -- transaction
+trans_created -- transaction
+
+goal_id -- goal
+goal_user_id -- goal
+goal_name -- goal
+goal_target -- goal
+goal_current -- goal
+goal_deadline -- goal
+goal_created -- goal
+
+budget_id -- budget
+budget_user_id -- budget
+budget_cat_id -- budget
+budget_amount -- budget
+budget_period -- budget
+budget_created -- budget
+
+admin ||--|| manages
+manages ||--o{ user
+
+user ||--o{ creates
+creates }o--|| category
+
+user ||--o{ has_trans
+has_trans }o--|| transaction
+
+user ||--o{ sets_goal
+sets_goal }o--|| goal
+
+user ||--o{ defines_budget
+defines_budget }o--|| budget
+
+category ||--o{ categorizes
+categorizes }o--|| transaction
+
+category ||--o{ limits
+limits }o--|| budget
+
+@enduml

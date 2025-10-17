@@ -1,0 +1,99 @@
+@startuml User Use Case Diagram - Budget Planner
+
+!theme plain
+skinparam backgroundColor white
+skinparam actor {
+    BackgroundColor lightgreen
+    BorderColor darkgreen
+}
+skinparam usecase {
+    BackgroundColor lightcyan
+    BorderColor darkblue
+}
+
+title User Use Case Diagram - Budget Planner System
+
+left to right direction
+
+actor "User" as user
+
+rectangle "Budget Planner User System" {
+    usecase "Register" as UC1
+    usecase "Login" as UC2
+    usecase "View Dashboard" as UC3
+    usecase "Manage Profile" as UC4
+    usecase "Manage Categories" as UC5
+    usecase "Add Category" as UC6
+    usecase "Edit Category" as UC7
+    usecase "Delete Category" as UC8
+    usecase "Manage Transactions" as UC9
+    usecase "Add Transaction" as UC10
+    usecase "Edit Transaction" as UC11
+    usecase "Delete Transaction" as UC12
+    usecase "View Transaction History" as UC13
+    usecase "Manage Goals" as UC14
+    usecase "Set Financial Goal" as UC15
+    usecase "Track Goal Progress" as UC16
+    usecase "Update Goal" as UC17
+    usecase "Manage Budget Limits" as UC18
+    usecase "Set Budget Limit" as UC19
+    usecase "Monitor Budget" as UC20
+    usecase "View Reports" as UC21
+    usecase "Generate Financial Summary" as UC22
+    usecase "Tax Planning" as UC23
+    usecase "Logout" as UC24
+}
+
+' User connections
+user --> UC1
+user --> UC2
+user --> UC3
+user --> UC4
+user --> UC5
+user --> UC9
+user --> UC14
+user --> UC18
+user --> UC21
+user --> UC23
+user --> UC24
+
+' Include relationships for Categories
+UC5 ..> UC6 : <<include>>
+UC5 ..> UC7 : <<include>>
+UC5 ..> UC8 : <<include>>
+
+' Include relationships for Transactions
+UC9 ..> UC10 : <<include>>
+UC9 ..> UC11 : <<include>>
+UC9 ..> UC12 : <<include>>
+UC9 ..> UC13 : <<include>>
+
+' Include relationships for Goals
+UC14 ..> UC15 : <<include>>
+UC14 ..> UC16 : <<include>>
+UC14 ..> UC17 : <<include>>
+
+' Include relationships for Budget
+UC18 ..> UC19 : <<include>>
+UC18 ..> UC20 : <<include>>
+
+' Extend relationships
+UC21 ..> UC22 : <<extend>>
+UC3 ..> UC21 : <<extend>>
+
+note right of user
+  Registered user managing
+  personal finances
+end note
+
+note bottom of UC23
+  Premium feature for
+  tax planning and optimization
+end note
+
+note left of UC21
+  Includes expense distribution,
+  monthly trends, and analytics
+end note
+
+@enduml

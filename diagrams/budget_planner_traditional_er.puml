@@ -1,0 +1,254 @@
+@startuml Budget_Planner_ER_Diagram
+
+!define ENTITY_COLOR #90EE90
+!define ATTRIBUTE_COLOR #40E0D0
+!define RELATIONSHIP_COLOR #FFA500
+
+' Define entities
+entity "Users" as users <<ENTITY_COLOR>> {
+}
+
+entity "Categories" as categories <<ENTITY_COLOR>> {
+}
+
+entity "Transactions" as transactions <<ENTITY_COLOR>> {
+}
+
+entity "Goals" as goals <<ENTITY_COLOR>> {
+}
+
+entity "Budget_Limits" as budget_limits <<ENTITY_COLOR>> {
+}
+
+entity "Recurring_Transactions" as recurring <<ENTITY_COLOR>> {
+}
+
+entity "AI_Recommendations" as ai_rec <<ENTITY_COLOR>> {
+}
+
+entity "Tax_Deductions" as tax <<ENTITY_COLOR>> {
+}
+
+entity "Remember_Tokens" as tokens <<ENTITY_COLOR>> {
+}
+
+entity "Admin_Users" as admin <<ENTITY_COLOR>> {
+}
+
+entity "Import_Log" as import_log <<ENTITY_COLOR>> {
+}
+
+' User attributes
+circle "ID" as user_id <<ATTRIBUTE_COLOR>>
+circle "Name" as user_name <<ATTRIBUTE_COLOR>>
+circle "Email" as user_email <<ATTRIBUTE_COLOR>>
+circle "Password" as user_password <<ATTRIBUTE_COLOR>>
+circle "Is_Premium" as user_premium <<ATTRIBUTE_COLOR>>
+circle "Email_Verified" as user_verified <<ATTRIBUTE_COLOR>>
+circle "Created_At" as user_created <<ATTRIBUTE_COLOR>>
+
+' Category attributes
+circle "ID" as cat_id <<ATTRIBUTE_COLOR>>
+circle "Name" as cat_name <<ATTRIBUTE_COLOR>>
+circle "Type" as cat_type <<ATTRIBUTE_COLOR>>
+circle "Created_At" as cat_created <<ATTRIBUTE_COLOR>>
+
+' Transaction attributes
+circle "ID" as trans_id <<ATTRIBUTE_COLOR>>
+circle "Amount" as trans_amount <<ATTRIBUTE_COLOR>>
+circle "Description" as trans_desc <<ATTRIBUTE_COLOR>>
+circle "Date" as trans_date <<ATTRIBUTE_COLOR>>
+circle "Created_At" as trans_created <<ATTRIBUTE_COLOR>>
+
+' Goal attributes
+circle "ID" as goal_id <<ATTRIBUTE_COLOR>>
+circle "Name" as goal_name <<ATTRIBUTE_COLOR>>
+circle "Target_Amount" as goal_target <<ATTRIBUTE_COLOR>>
+circle "Current_Amount" as goal_current <<ATTRIBUTE_COLOR>>
+circle "Deadline" as goal_deadline <<ATTRIBUTE_COLOR>>
+circle "Status" as goal_status <<ATTRIBUTE_COLOR>>
+
+' Budget Limit attributes
+circle "ID" as budget_id <<ATTRIBUTE_COLOR>>
+circle "Amount" as budget_amount <<ATTRIBUTE_COLOR>>
+circle "Period" as budget_period <<ATTRIBUTE_COLOR>>
+circle "Created_At" as budget_created <<ATTRIBUTE_COLOR>>
+
+' Recurring Transaction attributes
+circle "ID" as rec_id <<ATTRIBUTE_COLOR>>
+circle "Description" as rec_desc <<ATTRIBUTE_COLOR>>
+circle "Amount" as rec_amount <<ATTRIBUTE_COLOR>>
+circle "Frequency" as rec_freq <<ATTRIBUTE_COLOR>>
+circle "Start_Date" as rec_start <<ATTRIBUTE_COLOR>>
+circle "Next_Occurrence" as rec_next <<ATTRIBUTE_COLOR>>
+circle "Is_Active" as rec_active <<ATTRIBUTE_COLOR>>
+
+' AI Recommendation attributes
+circle "ID" as ai_id <<ATTRIBUTE_COLOR>>
+circle "Prompt" as ai_prompt <<ATTRIBUTE_COLOR>>
+circle "Recommendations" as ai_rec_data <<ATTRIBUTE_COLOR>>
+circle "Monthly_Income" as ai_income <<ATTRIBUTE_COLOR>>
+circle "Target_Savings" as ai_savings <<ATTRIBUTE_COLOR>>
+circle "Is_Favorite" as ai_fav <<ATTRIBUTE_COLOR>>
+
+' Tax Deduction attributes
+circle "ID" as tax_id <<ATTRIBUTE_COLOR>>
+circle "Category" as tax_cat <<ATTRIBUTE_COLOR>>
+circle "Amount" as tax_amount <<ATTRIBUTE_COLOR>>
+circle "Description" as tax_desc <<ATTRIBUTE_COLOR>>
+circle "Date" as tax_date <<ATTRIBUTE_COLOR>>
+
+' Remember Token attributes
+circle "ID" as token_id <<ATTRIBUTE_COLOR>>
+circle "Token" as token_value <<ATTRIBUTE_COLOR>>
+circle "Expires_At" as token_expires <<ATTRIBUTE_COLOR>>
+circle "Created_At" as token_created <<ATTRIBUTE_COLOR>>
+
+' Admin User attributes
+circle "ID" as admin_id <<ATTRIBUTE_COLOR>>
+circle "Name" as admin_name <<ATTRIBUTE_COLOR>>
+circle "Email" as admin_email <<ATTRIBUTE_COLOR>>
+circle "Password" as admin_password <<ATTRIBUTE_COLOR>>
+circle "Created_At" as admin_created <<ATTRIBUTE_COLOR>>
+
+' Import Log attributes
+circle "ID" as import_id <<ATTRIBUTE_COLOR>>
+circle "Filename" as import_file <<ATTRIBUTE_COLOR>>
+circle "Import_Type" as import_type <<ATTRIBUTE_COLOR>>
+circle "Records_Imported" as import_records <<ATTRIBUTE_COLOR>>
+circle "Status" as import_status <<ATTRIBUTE_COLOR>>
+
+' Define relationships
+diamond "Creates" as creates <<RELATIONSHIP_COLOR>>
+diamond "Makes" as makes <<RELATIONSHIP_COLOR>>
+diamond "Sets" as sets_goals <<RELATIONSHIP_COLOR>>
+diamond "Defines" as defines_limits <<RELATIONSHIP_COLOR>>
+diamond "Schedules" as schedules <<RELATIONSHIP_COLOR>>
+diamond "Receives" as receives <<RELATIONSHIP_COLOR>>
+diamond "Records" as records_tax <<RELATIONSHIP_COLOR>>
+diamond "Authenticates" as authenticates <<RELATIONSHIP_COLOR>>
+diamond "Performs" as performs <<RELATIONSHIP_COLOR>>
+diamond "Belongs_To" as belongs_cat <<RELATIONSHIP_COLOR>>
+diamond "Has_Limit" as has_limit <<RELATIONSHIP_COLOR>>
+diamond "Uses_Category" as uses_cat <<RELATIONSHIP_COLOR>>
+
+' Connect attributes to entities
+users ||--|| user_id
+users ||--|| user_name
+users ||--|| user_email
+users ||--|| user_password
+users ||--|| user_premium
+users ||--|| user_verified
+users ||--|| user_created
+
+categories ||--|| cat_id
+categories ||--|| cat_name
+categories ||--|| cat_type
+categories ||--|| cat_created
+
+transactions ||--|| trans_id
+transactions ||--|| trans_amount
+transactions ||--|| trans_desc
+transactions ||--|| trans_date
+transactions ||--|| trans_created
+
+goals ||--|| goal_id
+goals ||--|| goal_name
+goals ||--|| goal_target
+goals ||--|| goal_current
+goals ||--|| goal_deadline
+goals ||--|| goal_status
+
+budget_limits ||--|| budget_id
+budget_limits ||--|| budget_amount
+budget_limits ||--|| budget_period
+budget_limits ||--|| budget_created
+
+recurring ||--|| rec_id
+recurring ||--|| rec_desc
+recurring ||--|| rec_amount
+recurring ||--|| rec_freq
+recurring ||--|| rec_start
+recurring ||--|| rec_next
+recurring ||--|| rec_active
+
+ai_rec ||--|| ai_id
+ai_rec ||--|| ai_prompt
+ai_rec ||--|| ai_rec_data
+ai_rec ||--|| ai_income
+ai_rec ||--|| ai_savings
+ai_rec ||--|| ai_fav
+
+tax ||--|| tax_id
+tax ||--|| tax_cat
+tax ||--|| tax_amount
+tax ||--|| tax_desc
+tax ||--|| tax_date
+
+tokens ||--|| token_id
+tokens ||--|| token_value
+tokens ||--|| token_expires
+tokens ||--|| token_created
+
+admin ||--|| admin_id
+admin ||--|| admin_name
+admin ||--|| admin_email
+admin ||--|| admin_password
+admin ||--|| admin_created
+
+import_log ||--|| import_id
+import_log ||--|| import_file
+import_log ||--|| import_type
+import_log ||--|| import_records
+import_log ||--|| import_status
+
+' Connect entities through relationships
+users ||--o{ creates
+creates }o--|| categories
+note on link : 1:N\nUser creates\nmultiple categories
+
+users ||--o{ makes
+makes }o--|| transactions
+note on link : 1:N\nUser makes\nmultiple transactions
+
+categories ||--o{ belongs_cat
+belongs_cat }o--|| transactions
+note on link : 1:N\nCategory belongs to\nmultiple transactions
+
+users ||--o{ sets_goals
+sets_goals }o--|| goals
+note on link : 1:N\nUser sets\nmultiple goals
+
+users ||--o{ defines_limits
+defines_limits }o--|| budget_limits
+note on link : 1:N\nUser defines\nmultiple budget limits
+
+categories ||--o{ has_limit
+has_limit }o--|| budget_limits
+note on link : 1:N\nCategory has\nmultiple budget limits
+
+users ||--o{ schedules
+schedules }o--|| recurring
+note on link : 1:N\nUser schedules\nmultiple recurring transactions
+
+categories ||--o{ uses_cat
+uses_cat }o--|| recurring
+note on link : 1:N\nCategory used in\nmultiple recurring transactions
+
+users ||--o{ receives
+receives }o--|| ai_rec
+note on link : 1:N\nUser receives\nmultiple AI recommendations
+
+users ||--o{ records_tax
+records_tax }o--|| tax
+note on link : 1:N\nUser records\nmultiple tax deductions
+
+users ||--o{ authenticates
+authenticates }o--|| tokens
+note on link : 1:N\nUser has\nmultiple remember tokens
+
+users ||--o{ performs
+performs }o--|| import_log
+note on link : 1:N\nUser performs\nmultiple imports
+
+@enduml

@@ -1,0 +1,7 @@
+[2025-09-20 12:46:30] Email to: shivjani2005@gmail.com | Subject: Verify Your Email - Budget Planner | File: C:\xampp\htdocs\new 2\Cursor Web\config/../logs/emails/email_2025-09-20_12-46-30_shivjani2005@gmail.com.html
+[2025-09-20 12:46:34] Email to: shivjani2005@gmail.com | Subject: Verify Your Email - Budget Planner | File: C:\xampp\htdocs\new 2\Cursor Web\config/../logs/emails/email_2025-09-20_12-46-34_shivjani2005@gmail.com.html
+[2025-09-20 12:51:52] Email to: shivjani712@gmail.com | Subject: Verify Your Email - Budget Planner | File: C:\xampp\htdocs\new 2\Cursor Web\config/../logs/emails/email_2025-09-20_12-51-52_shivjani712@gmail.com.html
+[2025-09-20 12:52:14] Email to: shivjani712@gmail.com | Subject: Verify Your Email - Budget Planner | File: C:\xampp\htdocs\new 2\Cursor Web\config/../logs/emails/email_2025-09-20_12-52-14_shivjani712@gmail.com.html
+[2025-10-17 12:46:32] Email to: cli_test+1760697992@example.com | Subject: Verify Your Email - Budget Planner | File: C:\xampp1\htdocs\new 2\Cursor Web\config/../logs/emails/email_2025-10-17_12-46-32_cli_test+1760697992@example.com.html
+[2025-10-17 12:46:49] Email to: achyuthadwani32@gmail.com | Subject: Verify Your Email - Budget Planner | File: C:\xampp1\htdocs\new 2\Cursor Web\config/../logs/emails/email_2025-10-17_12-46-49_achyuthadwani32@gmail.com.html
+[2025-10-17 12:47:06] Email to: achyuthadwani32@gmail.com | Subject: Verify Your Email - Budget Planner | File: C:\xampp1\htdocs\new 2\Cursor Web\config/../logs/emails/email_2025-10-17_12-47-06_achyuthadwani32@gmail.com.html

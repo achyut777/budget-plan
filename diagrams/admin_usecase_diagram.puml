@@ -1,0 +1,75 @@
+@startuml Admin Use Case Diagram - Budget Planner
+
+!theme plain
+skinparam backgroundColor white
+skinparam actor {
+    BackgroundColor lightblue
+    BorderColor darkblue
+}
+skinparam usecase {
+    BackgroundColor lightyellow
+    BorderColor darkred
+}
+
+title Admin Use Case Diagram - Budget Planner System
+
+left to right direction
+
+actor "Admin" as admin
+
+rectangle "Budget Planner Admin System" {
+    usecase "Login" as UC1
+    usecase "Manage Dashboard" as UC2
+    usecase "Manage Users" as UC3
+    usecase "View User Details" as UC4
+    usecase "Update User Info" as UC5
+    usecase "Delete User" as UC6
+    usecase "Manage Transactions" as UC7
+    usecase "View All Transactions" as UC8
+    usecase "Monitor Categories" as UC9
+    usecase "Goals Tracking" as UC10
+    usecase "System Settings" as UC11
+    usecase "Security Functions" as UC12
+    usecase "Generate Reports" as UC13
+    usecase "Database Management" as UC14
+    usecase "Logout" as UC15
+}
+
+' Admin connections
+admin --> UC1
+admin --> UC2
+admin --> UC3
+admin --> UC4
+admin --> UC5
+admin --> UC6
+admin --> UC7
+admin --> UC8
+admin --> UC9
+admin --> UC10
+admin --> UC11
+admin --> UC12
+admin --> UC13
+admin --> UC14
+admin --> UC15
+
+' Include relationships
+UC3 ..> UC4 : <<include>>
+UC3 ..> UC5 : <<include>>
+UC3 ..> UC6 : <<include>>
+UC7 ..> UC8 : <<include>>
+
+' Extend relationships
+UC2 ..> UC13 : <<extend>>
+UC11 ..> UC14 : <<extend>>
+
+note right of admin
+  Admin has full system access
+  and can manage all user data
+end note
+
+note bottom of UC12
+  Includes user authentication,
+  data backup, and system security
+end note
+
+@enduml

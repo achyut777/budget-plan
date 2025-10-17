@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+    <!-- Target Circles -->
+    <circle cx="40" cy="40" r="35" fill="none" stroke="#dc3545" stroke-width="2"/>
+    <circle cx="40" cy="40" r="25" fill="none" stroke="#dc3545" stroke-width="2"/>
+    <circle cx="40" cy="40" r="15" fill="none" stroke="#dc3545" stroke-width="2"/>
+    
+    <!-- Target Center -->
+    <circle cx="40" cy="40" r="5" fill="#dc3545"/>
+    
+    <!-- Arrow -->
+    <path d="M70,10 L40,40" stroke="#0d6efd" stroke-width="3"/>
+    <polygon points="70,10 65,15 75,15" fill="#0d6efd"/>
+    
+    <!-- Dollar Sign -->
+    <text x="35" y="45" font-family="Arial" font-size="14" fill="#0d6efd">$</text>
+</svg> 

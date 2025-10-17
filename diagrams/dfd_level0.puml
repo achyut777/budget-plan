@@ -1,0 +1,90 @@
+@startuml DFD Level 0 - Budget Planner System
+
+!theme plain
+skinparam backgroundColor white
+skinparam rectangle {
+    BackgroundColor lightblue
+    BorderColor darkblue
+    FontColor black
+}
+skinparam actor {
+    BackgroundColor lightyellow
+    BorderColor darkred
+}
+skinparam database {
+    BackgroundColor lightgreen
+    BorderColor darkgreen
+}
+
+title Data Flow Diagram Level 0 - Budget Planner System Context
+
+' External Entities
+actor "User" as user
+actor "Admin" as admin
+database "Database\nSystem" as db
+
+' Main System Process
+rectangle "Budget Planner\nSystem\n(Process 0)" as system {
+}
+
+' Data Flows from User to System
+user --> system : User Registration Data
+user --> system : Login Credentials
+user --> system : Transaction Data
+user --> system : Category Information
+user --> system : Financial Goals
+user --> system : Budget Limits
+user --> system : Profile Updates
+
+' Data Flows from System to User
+system --> user : Dashboard Reports
+system --> user : Transaction History
+system --> user : Goal Progress
+system --> user : Budget Status
+system --> user : Financial Analytics
+system --> user : Tax Planning Reports
+system --> user : Account Information
+
+' Data Flows from Admin to System
+admin --> system : Admin Login
+admin --> system : User Management Commands
+admin --> system : System Configuration
+admin --> system : Security Settings
+
+' Data Flows from System to Admin
+system --> admin : User Statistics
+system --> admin : System Reports
+system --> admin : User Data
+system --> admin : Transaction Analytics
+system --> admin : System Status
+
+' Data Flows between System and Database
+system <--> db : Store/Retrieve User Data
+system <--> db : Store/Retrieve Transactions
+system <--> db : Store/Retrieve Categories
+system <--> db : Store/Retrieve Goals
+system <--> db : Store/Retrieve Budget Limits
+system <--> db : Store/Retrieve Admin Data
+
+note top of system
+  Central Budget Planning System
+  Processes all financial data
+  and user interactions
+end note
+
+note right of user
+  End users managing
+  personal finances
+end note
+
+note left of admin
+  System administrators
+  with elevated privileges
+end note
+
+note bottom of db
+  Persistent storage for
+  all application data
+end note
+
+@enduml

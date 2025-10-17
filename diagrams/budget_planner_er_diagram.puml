@@ -1,0 +1,86 @@
+@startuml BudgetPlannerERSimple
+
+skinparam backgroundColor white
+skinparam entity {
+    BackgroundColor lightyellow
+    BorderColor darkblue
+    FontColor black
+}
+skinparam diamond {
+    BackgroundColor lightpink
+    BorderColor darkred
+}
+
+title Budget Planner - ER Diagram
+
+entity "Admin" as admin {
+    * id : INT <<PK>>
+    --
+    * name : VARCHAR(100)
+    * email : VARCHAR(100) <<UK>>
+    * password : VARCHAR(255)
+    * created_at : TIMESTAMP
+}
+
+entity "User" as user {
+    * id : INT <<PK>>
+    --
+    * name : VARCHAR(100)
+    * email : VARCHAR(100) <<UK>>
+    * password : VARCHAR(255)
+    * is_premium : BOOLEAN
+    * created_at : TIMESTAMP
+    * updated_at : TIMESTAMP
+}
+
+entity "Category" as category {
+    * id : INT <<PK>>
+    --
+    * user_id : INT <<FK>>
+    * name : VARCHAR(50)
+    * type : ENUM
+    * created_at : TIMESTAMP
+}
+
+entity "Transaction" as transaction {
+    * id : INT <<PK>>
+    --
+    * user_id : INT <<FK>>
+    * category_id : INT <<FK>>
+    * amount : DECIMAL(10,2)
+    * description : TEXT
+    * date : DATE
+    * created_at : TIMESTAMP
+}
+
+entity "Goal" as goal {
+    * id : INT <<PK>>
+    --
+    * user_id : INT <<FK>>
+    * name : VARCHAR(100)
+    * target_amount : DECIMAL(10,2)
+    * current_amount : DECIMAL(10,2)
+    * deadline : DATE
+    * created_at : TIMESTAMP
+}
+
+entity "Budget_Limit" as budget {
+    * id : INT <<PK>>
+    --
+    * user_id : INT <<FK>>
+    * category_id : INT <<FK>>
+    * amount : DECIMAL(10,2)
+    * period : ENUM
+    * created_at : TIMESTAMP
+}
+
+' RELATIONSHIPS
+admin ||--o{ user : manages
+user ||--o{ category : creates
+user ||--o{ transaction : has
+user ||--o{ goal : sets
+user ||--o{ budget : defines
+category ||--o{ transaction : categorizes
+category ||--o{ budget : limits
+
+@enduml

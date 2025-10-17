@@ -1,0 +1,527 @@
+[03-Apr-2025 11:36:12 Europe/Berlin] Received data: Array
+(
+    [type] => income
+    [category_id] => 11
+    [amount] => 8000
+    [date] => 2025-04-03
+    [description] => invest
+)
+
+[03-Apr-2025 11:36:12 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[03-Apr-2025 11:36:12 Europe/Berlin] Sanitized data: user_id=7, type=income, category_id=11, amount=8000, date=2025-04-03, description=invest
+[03-Apr-2025 11:36:12 Europe/Berlin] Error in add_transaction.php: Unknown column 'type' in 'field list'
+[03-Apr-2025 11:36:19 Europe/Berlin] Received data: Array
+(
+    [type] => income
+    [category_id] => 11
+    [amount] => 8000
+    [date] => 2025-04-03
+    [description] => invest
+)
+
+[03-Apr-2025 11:36:19 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[03-Apr-2025 11:36:19 Europe/Berlin] Sanitized data: user_id=7, type=income, category_id=11, amount=8000, date=2025-04-03, description=invest
+[03-Apr-2025 11:36:19 Europe/Berlin] Error in add_transaction.php: Unknown column 'type' in 'field list'
+[03-Apr-2025 11:44:10 Europe/Berlin] Received data: Array
+(
+    [type] => income
+    [category_id] => 11
+    [amount] => 8000
+    [date] => 2025-04-03
+    [description] => invest
+)
+
+[03-Apr-2025 11:44:10 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[03-Apr-2025 11:44:10 Europe/Berlin] Sanitized data: user_id=7, type=income, category_id=11, amount=8000, date=2025-04-03, description=invest
+[03-Apr-2025 11:44:10 Europe/Berlin] Error in add_transaction.php: Unknown column 'type' in 'field list'
+[03-Apr-2025 11:44:11 Europe/Berlin] Received data: Array
+(
+    [type] => income
+    [category_id] => 11
+    [amount] => 8000
+    [date] => 2025-04-03
+    [description] => invest
+)
+
+[03-Apr-2025 11:44:11 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[03-Apr-2025 11:44:11 Europe/Berlin] Sanitized data: user_id=7, type=income, category_id=11, amount=8000, date=2025-04-03, description=invest
+[03-Apr-2025 11:44:11 Europe/Berlin] Error in add_transaction.php: Unknown column 'type' in 'field list'
+[03-Apr-2025 11:55:24 Europe/Berlin] Received data: Array
+(
+    [type] => income
+    [category_id] => 11
+    [amount] => 8000
+    [date] => 2025-04-03
+    [description] => invest
+)
+
+[03-Apr-2025 11:55:24 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[03-Apr-2025 11:55:24 Europe/Berlin] Sanitized data: user_id=7, type=income, category_id=11, amount=8000, date=2025-04-03, description=invest
+[03-Apr-2025 11:55:24 Europe/Berlin] Error in add_transaction.php: Unknown column 'type' in 'field list'
+[03-Apr-2025 12:11:20 Europe/Berlin] Received data: Array
+(
+    [type] => income
+    [category_id] => 12
+    [amount] => 800
+    [date] => 2025-04-04
+    [description] => salary
+)
+
+[03-Apr-2025 12:11:20 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[03-Apr-2025 12:11:20 Europe/Berlin] Sanitized data: user_id=7, type=income, category_id=12, amount=800, date=2025-04-04, description=salary
+[03-Apr-2025 12:11:20 Europe/Berlin] Error in add_transaction.php: Unknown column 'type' in 'field list'
+[03-Apr-2025 12:15:11 Europe/Berlin] Received data: Array
+(
+    [type] => income
+    [category_id] => 10
+    [amount] => 8000
+    [date] => 2025-04-03
+    [description] => salary
+)
+
+[03-Apr-2025 12:15:11 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[03-Apr-2025 12:15:11 Europe/Berlin] Sanitized data: user_id=7, type=income, category_id=10, amount=8000, date=2025-04-03, description=salary
+[03-Apr-2025 12:15:11 Europe/Berlin] Error in add_transaction.php: Unknown column 'type' in 'field list'
+[03-Apr-2025 12:15:13 Europe/Berlin] Received data: Array
+(
+    [type] => income
+    [category_id] => 10
+    [amount] => 8000
+    [date] => 2025-04-03
+    [description] => salary
+)
+
+[03-Apr-2025 12:15:13 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[03-Apr-2025 12:15:13 Europe/Berlin] Sanitized data: user_id=7, type=income, category_id=10, amount=8000, date=2025-04-03, description=salary
+[03-Apr-2025 12:15:13 Europe/Berlin] Error in add_transaction.php: Unknown column 'type' in 'field list'
+[03-Apr-2025 12:15:13 Europe/Berlin] Received data: Array
+(
+    [type] => income
+    [category_id] => 10
+    [amount] => 8000
+    [date] => 2025-04-03
+    [description] => salary
+)
+
+[03-Apr-2025 12:15:13 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[03-Apr-2025 12:15:13 Europe/Berlin] Sanitized data: user_id=7, type=income, category_id=10, amount=8000, date=2025-04-03, description=salary
+[03-Apr-2025 12:15:13 Europe/Berlin] Error in add_transaction.php: Unknown column 'type' in 'field list'
+[03-Apr-2025 12:15:13 Europe/Berlin] Received data: Array
+(
+    [type] => income
+    [category_id] => 10
+    [amount] => 8000
+    [date] => 2025-04-03
+    [description] => salary
+)
+
+[03-Apr-2025 12:15:13 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[03-Apr-2025 12:15:13 Europe/Berlin] Sanitized data: user_id=7, type=income, category_id=10, amount=8000, date=2025-04-03, description=salary
+[03-Apr-2025 12:15:13 Europe/Berlin] Error in add_transaction.php: Unknown column 'type' in 'field list'
+[03-Apr-2025 12:16:12 Europe/Berlin] Received data: Array
+(
+    [type] => income
+    [category_id] => 11
+    [amount] => 8000
+    [date] => 2025-04-03
+    [description] => salary
+)
+
+[03-Apr-2025 12:16:12 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[03-Apr-2025 12:16:12 Europe/Berlin] Sanitized data: user_id=7, type=income, category_id=11, amount=8000, date=2025-04-03, description=salary
+[03-Apr-2025 12:16:12 Europe/Berlin] Error in add_transaction.php: Unknown column 'type' in 'field list'
+[03-Apr-2025 12:16:16 Europe/Berlin] Received data: Array
+(
+    [type] => income
+    [category_id] => 11
+    [amount] => 8000
+    [date] => 2025-04-03
+    [description] => salary
+)
+
+[03-Apr-2025 12:16:16 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[03-Apr-2025 12:16:16 Europe/Berlin] Sanitized data: user_id=7, type=income, category_id=11, amount=8000, date=2025-04-03, description=salary
+[03-Apr-2025 12:16:16 Europe/Berlin] Error in add_transaction.php: Unknown column 'type' in 'field list'
+[03-Apr-2025 12:31:07 Europe/Berlin] Received data: Array
+(
+    [type] => income
+    [category_id] => 10
+    [amount] => 100000
+    [date] => 2025-04-03
+    [description] => salary
+)
+
+[03-Apr-2025 12:31:07 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[03-Apr-2025 12:31:07 Europe/Berlin] Sanitized data: user_id=7, type=income, category_id=10, amount=100000, date=2025-04-03, description=salary
+[03-Apr-2025 12:31:40 Europe/Berlin] Received data: Array
+(
+    [type] => income
+    [category_id] => 12
+    [amount] => 8000
+    [date] => 2025-04-03
+    [description] => Freelance 
+)
+
+[03-Apr-2025 12:31:40 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[03-Apr-2025 12:31:40 Europe/Berlin] Sanitized data: user_id=7, type=income, category_id=12, amount=8000, date=2025-04-03, description=Freelance 
+[03-Apr-2025 12:32:03 Europe/Berlin] Received data: Array
+(
+    [type] => expense
+    [category_id] => 13
+    [amount] => 12000
+    [date] => 2025-04-01
+    [description] => rent
+)
+
+[03-Apr-2025 12:32:03 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[03-Apr-2025 12:32:03 Europe/Berlin] Sanitized data: user_id=7, type=expense, category_id=13, amount=12000, date=2025-04-01, description=rent
+[03-Apr-2025 12:38:16 Europe/Berlin] Received data: Array
+(
+    [type] => expense
+    [category_id] => 17
+    [amount] => 13500
+    [date] => 2025-04-03
+    [description] => shopping 
+)
+
+[03-Apr-2025 12:38:16 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[03-Apr-2025 12:38:16 Europe/Berlin] Sanitized data: user_id=7, type=expense, category_id=17, amount=13500, date=2025-04-03, description=shopping 
+[03-Apr-2025 12:38:37 Europe/Berlin] Received data: Array
+(
+    [type] => expense
+    [category_id] => 14
+    [amount] => 1500
+    [date] => 2025-04-03
+    [description] => Food
+)
+
+[03-Apr-2025 12:38:37 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[03-Apr-2025 12:38:37 Europe/Berlin] Sanitized data: user_id=7, type=expense, category_id=14, amount=1500, date=2025-04-03, description=Food
+[03-Apr-2025 12:38:54 Europe/Berlin] Received data: Array
+(
+    [type] => expense
+    [category_id] => 18
+    [amount] => 2000
+    [date] => 2025-04-03
+    [description] => movie
+)
+
+[03-Apr-2025 12:38:54 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[03-Apr-2025 12:38:54 Europe/Berlin] Sanitized data: user_id=7, type=expense, category_id=18, amount=2000, date=2025-04-03, description=movie
+[03-Apr-2025 12:41:37 Europe/Berlin] Received data: 
+[03-Apr-2025 12:41:37 Europe/Berlin] Error in add_goal.php: Missing required fields: null
+[03-Apr-2025 12:41:40 Europe/Berlin] Received data: 
+[03-Apr-2025 12:41:40 Europe/Berlin] Error in add_goal.php: Missing required fields: null
+[03-Apr-2025 12:41:55 Europe/Berlin] Received data: 
+[03-Apr-2025 12:41:55 Europe/Berlin] Error in add_goal.php: Missing required fields: null
+[03-Apr-2025 12:41:57 Europe/Berlin] Received data: 
+[03-Apr-2025 12:41:57 Europe/Berlin] Error in add_goal.php: Missing required fields: null
+[03-Apr-2025 12:41:58 Europe/Berlin] Received data: 
+[03-Apr-2025 12:41:58 Europe/Berlin] Error in add_goal.php: Missing required fields: null
+[03-Apr-2025 12:41:58 Europe/Berlin] Received data: 
+[03-Apr-2025 12:41:58 Europe/Berlin] Error in add_goal.php: Missing required fields: null
+[03-Apr-2025 12:41:58 Europe/Berlin] Received data: 
+[03-Apr-2025 12:41:58 Europe/Berlin] Error in add_goal.php: Missing required fields: null
+[03-Apr-2025 12:41:58 Europe/Berlin] Received data: 
+[03-Apr-2025 12:41:58 Europe/Berlin] Error in add_goal.php: Missing required fields: null
+[03-Apr-2025 12:49:50 Europe/Berlin] Received data: Array
+(
+    [name] => For Car 
+    [target_amount] => 100000
+    [current_amount] => 1000
+    [deadline] => 2025-04-03
+)
+
+[03-Apr-2025 12:49:50 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_goal.php on line 37
+[03-Apr-2025 12:49:50 Europe/Berlin] Sanitized data: user_id=7, name=For Car , target_amount=100000, current_amount=1000, deadline=2025-04-03
+[03-Apr-2025 12:56:06 Europe/Berlin] Received data: Array
+(
+    [type] => expense
+    [category_id] => 19
+    [amount] => 18000
+    [date] => 2025-04-03
+    [description] => health insurance 
+)
+
+[03-Apr-2025 12:56:06 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[03-Apr-2025 12:56:06 Europe/Berlin] Sanitized data: user_id=7, type=expense, category_id=19, amount=18000, date=2025-04-03, description=health insurance 
+[03-Apr-2025 12:56:36 Europe/Berlin] Received data: Array
+(
+    [type] => expense
+    [category_id] => 15
+    [amount] => 9000
+    [date] => 2025-04-10
+    [description] => petrol
+)
+
+[03-Apr-2025 12:56:36 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[03-Apr-2025 12:56:36 Europe/Berlin] Sanitized data: user_id=7, type=expense, category_id=15, amount=9000, date=2025-04-10, description=petrol
+[03-Apr-2025 17:05:38 Europe/Berlin] Received data: Array
+(
+    [type] => income
+    [category_id] => 40
+    [amount] => 50000
+    [date] => 2025-04-01
+    [description] => salary
+)
+
+[03-Apr-2025 17:05:38 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[03-Apr-2025 17:05:38 Europe/Berlin] Sanitized data: user_id=10, type=income, category_id=40, amount=50000, date=2025-04-01, description=salary
+[03-Apr-2025 17:05:57 Europe/Berlin] Received data: Array
+(
+    [type] => expense
+    [category_id] => 43
+    [amount] => 5000
+    [date] => 2025-04-03
+    [description] => rent
+)
+
+[03-Apr-2025 17:05:57 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[03-Apr-2025 17:05:57 Europe/Berlin] Sanitized data: user_id=10, type=expense, category_id=43, amount=5000, date=2025-04-03, description=rent
+[03-Apr-2025 17:06:23 Europe/Berlin] Received data: Array
+(
+    [type] => expense
+    [category_id] => 47
+    [amount] => 5000
+    [date] => 2025-04-03
+    [description] => shopping 
+)
+
+[03-Apr-2025 17:06:23 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[03-Apr-2025 17:06:23 Europe/Berlin] Sanitized data: user_id=10, type=expense, category_id=47, amount=5000, date=2025-04-03, description=shopping 
+[03-Apr-2025 17:06:54 Europe/Berlin] Received data: Array
+(
+    [name] => for Activa 
+    [target_amount] => 120000
+    [current_amount] => 60000
+    [deadline] => 2025-04-30
+)
+
+[03-Apr-2025 17:06:54 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_goal.php on line 37
+[03-Apr-2025 17:06:54 Europe/Berlin] Sanitized data: user_id=10, name=for Activa , target_amount=120000, current_amount=60000, deadline=2025-04-30
+[03-Apr-2025 20:08:24 Europe/Berlin] Received data: Array
+(
+    [name] => fees
+    [target_amount] => 50000
+    [current_amount] => 600
+    [deadline] => 2025-05-10
+)
+
+[03-Apr-2025 20:08:24 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_goal.php on line 37
+[03-Apr-2025 20:08:24 Europe/Berlin] Sanitized data: user_id=7, name=fees, target_amount=50000, current_amount=600, deadline=2025-05-10
+[04-Apr-2025 15:02:47 Europe/Berlin] Received data: Array
+(
+    [type] => income
+    [category_id] => 60
+    [amount] => 100
+    [date] => 2025-04-04
+    [description] => salary
+)
+
+[04-Apr-2025 15:02:47 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[04-Apr-2025 15:02:47 Europe/Berlin] Sanitized data: user_id=12, type=income, category_id=60, amount=100, date=2025-04-04, description=salary
+[04-Apr-2025 15:03:03 Europe/Berlin] Received data: Array
+(
+    [type] => expense
+    [category_id] => 64
+    [amount] => 50
+    [date] => 2025-04-04
+    [description] => milk
+)
+
+[04-Apr-2025 15:03:03 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[04-Apr-2025 15:03:03 Europe/Berlin] Sanitized data: user_id=12, type=expense, category_id=64, amount=50, date=2025-04-04, description=milk
+[04-Apr-2025 15:03:20 Europe/Berlin] Received data: Array
+(
+    [type] => expense
+    [category_id] => 67
+    [amount] => 20
+    [date] => 2025-04-04
+    [description] => shopping 
+)
+
+[04-Apr-2025 15:03:20 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_transaction.php on line 41
+[04-Apr-2025 15:03:20 Europe/Berlin] Sanitized data: user_id=12, type=expense, category_id=67, amount=20, date=2025-04-04, description=shopping 
+[04-Apr-2025 15:03:39 Europe/Berlin] Received data: Array
+(
+    [name] => savings 
+    [target_amount] => 5000
+    [current_amount] => 200
+    [deadline] => 2025-04-30
+)
+
+[04-Apr-2025 15:03:39 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new\Cursor Web\api\add_goal.php on line 37
+[04-Apr-2025 15:03:39 Europe/Berlin] Sanitized data: user_id=12, name=savings , target_amount=5000, current_amount=200, deadline=2025-04-30
+[01-May-2025 14:42:14 Europe/Berlin] Received data: Array
+(
+    [type] => income
+    [category_id] => 12
+    [amount] => 50000
+    [date] => 2025-05-16
+    [description] => salary
+)
+
+[01-May-2025 14:42:14 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new 2\Cursor Web\api\add_transaction.php on line 41
+[01-May-2025 14:42:14 Europe/Berlin] Sanitized data: user_id=7, type=income, category_id=12, amount=50000, date=2025-05-16, description=salary
+[01-May-2025 14:42:37 Europe/Berlin] Received data: Array
+(
+    [type] => expense
+    [category_id] => 19
+    [amount] => 250
+    [date] => 2025-05-09
+    [description] => rent
+)
+
+[01-May-2025 14:42:37 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new 2\Cursor Web\api\add_transaction.php on line 41
+[01-May-2025 14:42:37 Europe/Berlin] Sanitized data: user_id=7, type=expense, category_id=19, amount=250, date=2025-05-09, description=rent
+[01-May-2025 14:44:10 Europe/Berlin] Received data: Array
+(
+    [type] => income
+    [category_id] => 10
+    [amount] => 100000
+    [date] => 2025-05-01
+    [description] => salary
+)
+
+[01-May-2025 14:44:10 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new 2\Cursor Web\api\add_transaction.php on line 41
+[01-May-2025 14:44:10 Europe/Berlin] Sanitized data: user_id=7, type=income, category_id=10, amount=100000, date=2025-05-01, description=salary
+[01-May-2025 14:44:32 Europe/Berlin] Received data: Array
+(
+    [type] => expense
+    [category_id] => 13
+    [amount] => 15000
+    [date] => 2025-05-01
+    [description] => rent
+)
+
+[01-May-2025 14:44:32 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new 2\Cursor Web\api\add_transaction.php on line 41
+[01-May-2025 14:44:32 Europe/Berlin] Sanitized data: user_id=7, type=expense, category_id=13, amount=15000, date=2025-05-01, description=rent
+[01-May-2025 14:45:00 Europe/Berlin] Received data: Array
+(
+    [type] => expense
+    [category_id] => 14
+    [amount] => 250
+    [date] => 2025-05-01
+    [description] => Burger 
+)
+
+[01-May-2025 14:45:00 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new 2\Cursor Web\api\add_transaction.php on line 41
+[01-May-2025 14:45:00 Europe/Berlin] Sanitized data: user_id=7, type=expense, category_id=14, amount=250, date=2025-05-01, description=Burger 
+[01-May-2025 14:45:46 Europe/Berlin] Received data: Array
+(
+    [type] => expense
+    [category_id] => 19
+    [amount] => 18000
+    [date] => 2025-05-01
+    [description] => Insurance
+)
+
+[01-May-2025 14:45:46 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new 2\Cursor Web\api\add_transaction.php on line 41
+[01-May-2025 14:45:46 Europe/Berlin] Sanitized data: user_id=7, type=expense, category_id=19, amount=18000, date=2025-05-01, description=Insurance
+[01-May-2025 14:46:42 Europe/Berlin] Received data: Array
+(
+    [type] => income
+    [category_id] => 12
+    [amount] => 20000
+    [date] => 2025-05-01
+    [description] => invested money Back
+)
+
+[01-May-2025 14:46:42 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new 2\Cursor Web\api\add_transaction.php on line 41
+[01-May-2025 14:46:42 Europe/Berlin] Sanitized data: user_id=7, type=income, category_id=12, amount=20000, date=2025-05-01, description=invested money Back
+[01-May-2025 14:47:06 Europe/Berlin] Received data: Array
+(
+    [type] => expense
+    [category_id] => 17
+    [amount] => 9000
+    [date] => 2025-05-01
+    [description] => shopping 
+)
+
+[01-May-2025 14:47:06 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new 2\Cursor Web\api\add_transaction.php on line 41
+[01-May-2025 14:47:06 Europe/Berlin] Sanitized data: user_id=7, type=expense, category_id=17, amount=9000, date=2025-05-01, description=shopping 
+[01-May-2025 14:47:38 Europe/Berlin] Received data: Array
+(
+    [type] => expense
+    [category_id] => 14
+    [amount] => 5000
+    [date] => 2025-05-01
+    [description] => food
+)
+
+[01-May-2025 14:47:38 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new 2\Cursor Web\api\add_transaction.php on line 41
+[01-May-2025 14:47:38 Europe/Berlin] Sanitized data: user_id=7, type=expense, category_id=14, amount=5000, date=2025-05-01, description=food
+[02-May-2025 13:05:18 Europe/Berlin] Received data: Array
+(
+    [type] => income
+    [category_id] => 12
+    [amount] => 10000
+    [date] => 2025-05-02
+    [description] => App
+)
+
+[02-May-2025 13:05:18 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new 2\Cursor Web\api\add_transaction.php on line 41
+[02-May-2025 13:05:18 Europe/Berlin] Sanitized data: user_id=7, type=income, category_id=12, amount=10000, date=2025-05-02, description=App
+[02-May-2025 13:05:45 Europe/Berlin] Received data: Array
+(
+    [type] => expense
+    [category_id] => 14
+    [amount] => 1000
+    [date] => 2025-05-02
+    [description] => food 
+)
+
+[02-May-2025 13:05:45 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new 2\Cursor Web\api\add_transaction.php on line 41
+[02-May-2025 13:05:45 Europe/Berlin] Sanitized data: user_id=7, type=expense, category_id=14, amount=1000, date=2025-05-02, description=food 
+[19-Sep-2025 05:27:43 Europe/Berlin] Received data: Array
+(
+    [type] => income
+    [category_id] => 122
+    [amount] => 500
+    [date] => 2025-09-19
+    [description] => fghj
+)
+
+[19-Sep-2025 05:27:43 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new 2\Cursor Web\api\add_transaction.php on line 41
+[19-Sep-2025 05:27:43 Europe/Berlin] Sanitized data: user_id=18, type=income, category_id=122, amount=500, date=2025-09-19, description=fghj
+[20-Sep-2025 05:20:45 Europe/Berlin] Received data: Array
+(
+    [type] => expense
+    [category_id] => 125
+    [amount] => 200
+    [date] => 2025-09-20
+    [description] => fghjkl;
+)
+
+[20-Sep-2025 05:20:45 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new 2\Cursor Web\api\add_transaction.php on line 41
+[20-Sep-2025 05:20:45 Europe/Berlin] Sanitized data: user_id=18, type=expense, category_id=125, amount=200, date=2025-09-20, description=fghjkl;
+[20-Sep-2025 05:28:29 Europe/Berlin] Received data: Array
+(
+    [type] => income
+    [category_id] => 121
+    [amount] => 500
+    [date] => 2025-09-20
+    [description] => “Join me on a 30-day coding adventure mastering React.js – from basics to full-blown projects & pro tips!”
+)
+
+[20-Sep-2025 05:28:29 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new 2\Cursor Web\api\add_transaction.php on line 41
+[20-Sep-2025 05:28:29 Europe/Berlin] Sanitized data: user_id=18, type=income, category_id=121, amount=500, date=2025-09-20, description=“Join me on a 30-day coding adventure mastering React.js – from basics to full-blown projects & pro tips!”
+[20-Sep-2025 05:33:10 Europe/Berlin] Received data: Array
+(
+    [name] => For Car  Emi
+    [target_amount] => 5000
+    [current_amount] => 1000
+    [deadline] => 2025-09-20
+)
+
+[20-Sep-2025 05:33:10 Europe/Berlin] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\xampp\htdocs\new 2\Cursor Web\api\add_goal.php on line 37
+[20-Sep-2025 05:33:10 Europe/Berlin] Sanitized data: user_id=18, name=For Car  Emi, target_amount=5000, current_amount=1000, deadline=2025-09-20
+[17-Oct-2025 12:48:10 Europe/Berlin] Received data: Array
+(
+    [name] => save
+    [target_amount] => 1000000
+    [current_amount] => 100000
+    [deadline] => 2025-10-22
+)
+
+[17-Oct-2025 12:48:10 Europe/Berlin] Sanitized data: user_id=20, name=save, target_amount=1000000, current_amount=100000, deadline=2025-10-22

@@ -1,0 +1,113 @@
+@startuml DFD Level 1 - Budget Planner System
+
+!theme plain
+skinparam backgroundColor white
+skinparam rectangle {
+    BackgroundColor lightcyan
+    BorderColor darkblue
+    FontColor black
+}
+skinparam actor {
+    BackgroundColor lightyellow
+    BorderColor darkred
+}
+skinparam database {
+    BackgroundColor lightgreen
+    BorderColor darkgreen
+}
+skinparam storage {
+    BackgroundColor pink
+    BorderColor darkred
+}
+
+title Data Flow Diagram Level 1 - Budget Planner System Processes
+
+' External Entities
+actor "User" as user
+actor "Admin" as admin
+
+' Data Stores
+storage "D1: Users" as d1
+storage "D2: Categories" as d2
+storage "D3: Transactions" as d3
+storage "D4: Goals" as d4
+storage "D5: Budget Limits" as d5
+storage "D6: Admin Users" as d6
+
+' Internal Processes
+rectangle "1.0\nUser\nAuthentication" as p1
+rectangle "2.0\nTransaction\nManagement" as p2
+rectangle "3.0\nCategory\nManagement" as p3
+rectangle "4.0\nGoal\nTracking" as p4
+rectangle "5.0\nBudget\nMonitoring" as p5
+rectangle "6.0\nReporting &\nAnalytics" as p6
+rectangle "7.0\nAdmin\nManagement" as p7
+
+' User Data Flows
+user --> p1 : Login/Register Data
+p1 --> user : Authentication Status
+p1 <--> d1 : User Credentials
+
+user --> p2 : Transaction Data
+p2 --> user : Transaction Confirmation
+p2 <--> d3 : Transaction Records
+p2 --> d2 : Category Usage
+
+user --> p3 : Category Data
+p3 --> user : Category List
+p3 <--> d2 : Category Information
+
+user --> p4 : Goal Data
+p4 --> user : Goal Progress
+p4 <--> d4 : Goal Records
+
+user --> p5 : Budget Preferences
+p5 --> user : Budget Status
+p5 <--> d5 : Budget Limits
+p5 --> d3 : Spending Analysis
+
+user --> p6 : Report Requests
+p6 --> user : Financial Reports
+p6 --> d3 : Transaction Analysis
+p6 --> d4 : Goal Analysis
+p6 --> d5 : Budget Analysis
+
+' Admin Data Flows
+admin --> p7 : Admin Commands
+p7 --> admin : System Reports
+p7 <--> d6 : Admin Credentials
+p7 --> d1 : User Management
+p7 --> d3 : Transaction Monitoring
+p7 --> d2 : Category Oversight
+
+' Inter-process Data Flows
+p2 --> p5 : Spending Data
+p2 --> p6 : Transaction Summary
+p3 --> p2 : Category Validation
+p4 --> p6 : Goal Statistics
+p5 --> p6 : Budget Statistics
+p1 --> p2 : User Validation
+p1 --> p3 : User Validation
+p1 --> p4 : User Validation
+p1 --> p5 : User Validation
+p1 --> p6 : User Validation
+
+note top of p1
+  Handles user login,
+  registration, and session
+  management
+end note
+
+note right of p6
+  Generates financial analytics,
+  expense distribution, and
+  monthly trends
+end note
+
+note bottom of p7
+  Manages users, monitors
+  system performance, and
+  handles security
+end note
+
+@enduml

@@ -1,0 +1,196 @@
+@startuml Budget_Planner_ER_Diagram_Simplified
+
+skinparam backgroundColor white
+skinparam entity {
+  BackgroundColor lightgreen
+  BorderColor black
+  FontSize 12
+  FontStyle bold
+}
+
+skinparam circle {
+  BackgroundColor lightblue
+  BorderColor black
+  FontSize 10
+}
+
+skinparam diamond {
+  BackgroundColor orange
+  BorderColor black
+  FontSize 10
+  FontStyle bold
+}
+
+' Main Entities
+entity "Users" as users
+entity "Categories" as categories  
+entity "Transactions" as transactions
+entity "Goals" as goals
+entity "Budget_Limits" as budget_limits
+entity "Recurring_Transactions" as recurring
+entity "AI_Recommendations" as ai_rec
+entity "Tax_Deductions" as tax_ded
+entity "Admin_Users" as admin_users
+
+' User Attributes
+(ID) as user_id
+(Name) as user_name
+(Email) as user_email
+(Password) as user_pass
+(Is_Premium) as user_premium
+(Email_Verified) as user_verified
+
+' Category Attributes
+(ID) as cat_id
+(Name) as cat_name
+(Type) as cat_type
+
+' Transaction Attributes  
+(ID) as trans_id
+(Amount) as trans_amount
+(Description) as trans_desc
+(Date) as trans_date
+
+' Goal Attributes
+(ID) as goal_id
+(Name) as goal_name
+(Target_Amount) as goal_target
+(Current_Amount) as goal_current
+(Deadline) as goal_deadline
+(Status) as goal_status
+
+' Budget Limit Attributes
+(ID) as budget_id
+(Amount) as budget_amount
+(Period) as budget_period
+
+' Recurring Transaction Attributes
+(ID) as rec_id
+(Description) as rec_desc
+(Amount) as rec_amount
+(Frequency) as rec_freq
+(Start_Date) as rec_start
+(Is_Active) as rec_active
+
+' AI Recommendation Attributes
+(ID) as ai_id
+(Prompt) as ai_prompt
+(Recommendations) as ai_data
+(Monthly_Income) as ai_income
+(Is_Favorite) as ai_fav
+
+' Tax Deduction Attributes
+(ID) as tax_id
+(Category) as tax_cat
+(Amount) as tax_amount
+(Date) as tax_date
+
+' Admin User Attributes
+(ID) as admin_id
+(Name) as admin_name
+(Email) as admin_email
+(Password) as admin_pass
+
+' Relationships
+diamond Creates
+diamond Makes  
+diamond Sets
+diamond Defines
+diamond Schedules
+diamond Receives
+diamond Records
+diamond BelongsTo
+diamond HasLimit
+diamond UsesCategory
+
+' Connect User attributes
+users ||--|| user_id
+users ||--|| user_name
+users ||--|| user_email
+users ||--|| user_pass
+users ||--|| user_premium
+users ||--|| user_verified
+
+' Connect Category attributes
+categories ||--|| cat_id
+categories ||--|| cat_name
+categories ||--|| cat_type
+
+' Connect Transaction attributes
+transactions ||--|| trans_id
+transactions ||--|| trans_amount
+transactions ||--|| trans_desc
+transactions ||--|| trans_date
+
+' Connect Goal attributes
+goals ||--|| goal_id
+goals ||--|| goal_name
+goals ||--|| goal_target
+goals ||--|| goal_current
+goals ||--|| goal_deadline
+goals ||--|| goal_status
+
+' Connect Budget Limit attributes
+budget_limits ||--|| budget_id
+budget_limits ||--|| budget_amount
+budget_limits ||--|| budget_period
+
+' Connect Recurring Transaction attributes
+recurring ||--|| rec_id
+recurring ||--|| rec_desc
+recurring ||--|| rec_amount
+recurring ||--|| rec_freq
+recurring ||--|| rec_start
+recurring ||--|| rec_active
+
+' Connect AI Recommendation attributes
+ai_rec ||--|| ai_id
+ai_rec ||--|| ai_prompt
+ai_rec ||--|| ai_data
+ai_rec ||--|| ai_income
+ai_rec ||--|| ai_fav
+
+' Connect Tax Deduction attributes
+tax_ded ||--|| tax_id
+tax_ded ||--|| tax_cat
+tax_ded ||--|| tax_amount
+tax_ded ||--|| tax_date
+
+' Connect Admin User attributes
+admin_users ||--|| admin_id
+admin_users ||--|| admin_name
+admin_users ||--|| admin_email
+admin_users ||--|| admin_pass
+
+' Entity Relationships with cardinality
+users ||--o{ Creates
+Creates }o--|| categories
+
+users ||--o{ Makes
+Makes }o--|| transactions  
+
+categories ||--o{ BelongsTo
+BelongsTo }o--|| transactions
+
+users ||--o{ Sets
+Sets }o--|| goals
+
+users ||--o{ Defines  
+Defines }o--|| budget_limits
+
+categories ||--o{ HasLimit
+HasLimit }o--|| budget_limits
+
+users ||--o{ Schedules
+Schedules }o--|| recurring
+
+categories ||--o{ UsesCategory
+UsesCategory }o--|| recurring
+
+users ||--o{ Receives
+Receives }o--|| ai_rec
+
+users ||--o{ Records
+Records }o--|| tax_ded
+
+@enduml

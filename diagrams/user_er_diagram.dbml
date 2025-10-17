@@ -1,0 +1,90 @@
+// User Side ER Diagram - Budget Planner Application
+// This diagram shows the database structure from the user's perspective
+// Upload to dbdiagram.io for visual representation
+
+Table users {
+  id int [pk, increment] // Primary Key, Auto Increment
+  name varchar(100) [not null]
+  email varchar(100) [not null, unique]
+  password varchar(255) [not null]
+  is_premium boolean [default: false]
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+  updated_at timestamp [default: `CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP`]
+  
+  Note: 'End users who manage their personal finances'
+}
+
+Table categories {
+  id int [pk, increment] // Primary Key, Auto Increment
+  user_id int [not null, ref: > users.id] // Foreign Key to users
+  name varchar(50) [not null]
+  type enum [not null, note: 'income or expense']
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+  
+  Note: 'User-created categories for organizing transactions'
+}
+
+Table transactions {
+  id int [pk, increment] // Primary Key, Auto Increment
+  user_id int [not null, ref: > users.id] // Foreign Key to users
+  category_id int [not null, ref: > categories.id] // Foreign Key to categories
+  amount decimal(10,2) [not null]
+  description text
+  date date [not null]
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+  
+  Note: 'User financial transactions (income and expenses)'
+}
+
+Table goals {
+  id int [pk, increment] // Primary Key, Auto Increment
+  user_id int [not null, ref: > users.id] // Foreign Key to users
+  name varchar(100) [not null]
+  target_amount decimal(10,2) [not null]
+  current_amount decimal(10,2) [default: 0]
+  deadline date
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+  
+  Note: 'User financial goals and savings targets'
+}
+
+Table budget_limits {
+  id int [pk, increment] // Primary Key, Auto Increment
+  user_id int [not null, ref: > users.id] // Foreign Key to users
+  category_id int [not null, ref: > categories.id] // Foreign Key to categories
+  amount decimal(10,2) [not null]
+  period enum [not null, note: 'daily, weekly, monthly, yearly']
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+  
+  Note: 'User-set budget limits for specific categories'
+}
+
+// USER SIDE FEATURES:
+// ==================
+// 1. Personal Finance Management:
+//    - Track income and expenses
+//    - Set financial goals
+//    - Create budget limits
+//    - Categorize transactions
+
+// 2. User Capabilities:
+//    - Register and login
+//    - Create custom categories
+//    - Add/edit/delete transactions
+//    - Set and track goals
+//    - Monitor budget limits
+//    - View financial reports
+
+// 3. Data Relationships:
+//    - One user → Many categories
+//    - One user → Many transactions
+//    - One user → Many goals
+//    - One user → Many budget limits
+//    - One category → Many transactions
+//    - One category → Many budget limits
+
+// 4. Security Features:
+//    - Password hashing
+//    - User session management
+//    - Data isolation (users only see their own data)
+//    - CASCADE DELETE for data integrity

@@ -1,0 +1,143 @@
+@startuml BudgetPlannerER
+
+!define ENTITY class
+!define WEAK_ENTITY class
+!define ATTRIBUTE attribute
+!define PRIMARY_KEY <<PK>>
+!define FOREIGN_KEY <<FK>>
+
+skinparam backgroundColor white
+skinparam class {
+  BackgroundColor lightblue
+  BorderColor black
+  FontSize 10
+  FontStyle bold
+}
+
+skinparam note {
+  BackgroundColor lightyellow
+  BorderColor black
+}
+
+' Entities with attributes
+ENTITY Users {
+  + user_id : INT PRIMARY_KEY
+  --
+  username : VARCHAR(50) NOT NULL
+  email : VARCHAR(100) UNIQUE NOT NULL
+  password_hash : VARCHAR(255) NOT NULL
+  first_name : VARCHAR(50)
+  last_name : VARCHAR(50)
+  date_created : TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  is_premium : BOOLEAN DEFAULT FALSE
+  email_verified : BOOLEAN DEFAULT FALSE
+  remember_token : VARCHAR(100)
+  last_login : TIMESTAMP
+}
+
+ENTITY Categories {
+  + category_id : INT PRIMARY_KEY
+  --
+  category_name : VARCHAR(50) NOT NULL
+  category_type : ENUM('income', 'expense') NOT NULL
+  user_id : INT FOREIGN_KEY
+  is_default : BOOLEAN DEFAULT FALSE
+  date_created : TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+}
+
+ENTITY Transactions {
+  + transaction_id : INT PRIMARY_KEY
+  --
+  user_id : INT FOREIGN_KEY
+  category_id : INT FOREIGN_KEY
+  amount : DECIMAL(10,2) NOT NULL
+  description : TEXT
+  transaction_date : DATE NOT NULL
+  transaction_type : ENUM('income', 'expense') NOT NULL
+  date_created : TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  is_recurring : BOOLEAN DEFAULT FALSE
+  recurring_frequency : ENUM('daily', 'weekly', 'monthly', 'yearly')
+}
+
+ENTITY Goals {
+  + goal_id : INT PRIMARY_KEY
+  --
+  user_id : INT FOREIGN_KEY
+  goal_name : VARCHAR(100) NOT NULL
+  target_amount : DECIMAL(10,2) NOT NULL
+  current_amount : DECIMAL(10,2) DEFAULT 0.00
+  target_date : DATE
+  status : ENUM('active', 'completed', 'paused') DEFAULT 'active'
+  priority : ENUM('low', 'medium', 'high') DEFAULT 'medium'
+  date_created : TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+}
+
+ENTITY Budget_Limits {
+  + budget_id : INT PRIMARY_KEY
+  --
+  user_id : INT FOREIGN_KEY
+  category_id : INT FOREIGN_KEY
+  limit_amount : DECIMAL(10,2) NOT NULL
+  period_type : ENUM('daily', 'weekly', 'monthly', 'yearly') DEFAULT 'monthly'
+  start_date : DATE NOT NULL
+  end_date : DATE
+  alert_threshold : DECIMAL(5,2) DEFAULT 80.00
+  is_active : BOOLEAN DEFAULT TRUE
+}
+
+ENTITY AI_Recommendations {
+  + recommendation_id : INT PRIMARY_KEY
+  --
+  user_id : INT FOREIGN_KEY
+  recommendation_text : TEXT NOT NULL
+  recommendation_type : ENUM('saving', 'spending', 'investment', 'budget') NOT NULL
+  confidence_score : DECIMAL(3,2)
+  is_favorite : BOOLEAN DEFAULT FALSE
+  date_generated : TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  monthly_income : DECIMAL(10,2)
+  prompt_used : TEXT
+}
+
+ENTITY Admin_Users {
+  + admin_id : INT PRIMARY_KEY
+  --
+  admin_name : VARCHAR(50) NOT NULL
+  admin_email : VARCHAR(100) UNIQUE NOT NULL
+  password_hash : VARCHAR(255) NOT NULL
+  role : ENUM('super_admin', 'admin', 'moderator') DEFAULT 'admin'
+  permissions : JSON
+  last_login : TIMESTAMP
+  date_created : TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  is_active : BOOLEAN DEFAULT TRUE
+}
+
+' Relationships with proper cardinality
+Users ||--o{ Categories : "creates\n(1:M)"
+Users ||--o{ Transactions : "makes\n(1:M)"
+Users ||--o{ Goals : "sets\n(1:M)"
+Users ||--o{ Budget_Limits : "defines\n(1:M)"
+Users ||--o{ AI_Recommendations : "receives\n(1:M)"
+
+Categories ||--o{ Transactions : "categorizes\n(1:M)"
+Categories ||--o{ Budget_Limits : "has_limit\n(1:M)"
+
+' Notes for business rules
+note right of Users
+  Primary entity representing
+  system users with authentication
+  and profile information
+end note
+
+note right of Transactions
+  Core financial data with
+  support for recurring
+  transactions
+end note
+
+note right of Budget_Limits
+  Spending limits with
+  configurable alert
+  thresholds
+end note
+
+@enduml

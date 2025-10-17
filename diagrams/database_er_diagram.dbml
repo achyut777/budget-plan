@@ -1,0 +1,74 @@
+// Budget Planner Database ER Diagram
+// This file can be uploaded to dbdiagram.io for visual representation
+
+Table users {
+  id int [pk, increment] // Primary Key, Auto Increment
+  name varchar(100) [not null]
+  email varchar(100) [not null, unique]
+  password varchar(255) [not null]
+  is_premium boolean [default: false]
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+  updated_at timestamp [default: `CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP`]
+  
+  Note: 'Main user table storing user authentication and profile data'
+}
+
+Table categories {
+  id int [pk, increment] // Primary Key, Auto Increment
+  user_id int [not null, ref: > users.id] // Foreign Key to users
+  name varchar(50) [not null]
+  type enum [not null, note: 'income or expense']
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+  
+  Note: 'Categories for organizing transactions (income/expense types)'
+}
+
+Table transactions {
+  id int [pk, increment] // Primary Key, Auto Increment
+  user_id int [not null, ref: > users.id] // Foreign Key to users
+  category_id int [not null, ref: > categories.id] // Foreign Key to categories
+  amount decimal(10,2) [not null]
+  description text
+  date date [not null]
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+  
+  Note: 'Individual financial transactions (income/expenses)'
+}
+
+Table goals {
+  id int [pk, increment] // Primary Key, Auto Increment
+  user_id int [not null, ref: > users.id] // Foreign Key to users
+  name varchar(100) [not null]
+  target_amount decimal(10,2) [not null]
+  current_amount decimal(10,2) [default: 0]
+  deadline date
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+  
+  Note: 'Financial goals and savings targets for users'
+}
+
+Table budget_limits {
+  id int [pk, increment] // Primary Key, Auto Increment
+  user_id int [not null, ref: > users.id] // Foreign Key to users
+  category_id int [not null, ref: > categories.id] // Foreign Key to categories
+  amount decimal(10,2) [not null]
+  period enum [not null, note: 'daily, weekly, monthly, yearly']
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+  
+  Note: 'Budget limits set by users for specific categories'
+}
+
+// Relationships Summary:
+// - One user can have many categories (1:N)
+// - One user can have many transactions (1:N)
+// - One user can have many goals (1:N)
+// - One user can have many budget limits (1:N)
+// - One category can have many transactions (1:N)
+// - One category can have many budget limits (1:N)
+
+// Database Features:
+// - CASCADE DELETE: When a user is deleted, all related records are automatically deleted
+// - UNIQUE constraints on email to prevent duplicate accounts
+// - ENUM types for controlled values (transaction type, budget period)
+// - Decimal precision for financial amounts
+// - Timestamps for audit trails

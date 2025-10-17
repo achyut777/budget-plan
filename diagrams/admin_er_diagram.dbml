@@ -1,0 +1,115 @@
+// Admin Side ER Diagram - Budget Planner Application
+// This diagram shows the database structure from the admin's perspective
+// Upload to dbdiagram.io for visual representation
+
+Table admin_users {
+  id int [pk, increment] // Primary Key, Auto Increment
+  name varchar(100) [not null]
+  email varchar(100) [not null, unique]
+  password varchar(255) [not null]
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+  
+  Note: 'System administrators with elevated privileges'
+}
+
+Table users {
+  id int [pk, increment] // Primary Key, Auto Increment
+  name varchar(100) [not null]
+  email varchar(100) [not null, unique]
+  password varchar(255) [not null]
+  is_premium boolean [default: false]
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+  updated_at timestamp [default: `CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP`]
+  
+  Note: 'End users managed by administrators'
+}
+
+Table categories {
+  id int [pk, increment] // Primary Key, Auto Increment
+  user_id int [not null, ref: > users.id] // Foreign Key to users
+  name varchar(50) [not null]
+  type enum [not null, note: 'income or expense']
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+  
+  Note: 'Categories that admins can view and manage'
+}
+
+Table transactions {
+  id int [pk, increment] // Primary Key, Auto Increment
+  user_id int [not null, ref: > users.id] // Foreign Key to users
+  category_id int [not null, ref: > categories.id] // Foreign Key to categories
+  amount decimal(10,2) [not null]
+  description text
+  date date [not null]
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+  
+  Note: 'All user transactions visible to administrators'
+}
+
+Table goals {
+  id int [pk, increment] // Primary Key, Auto Increment
+  user_id int [not null, ref: > users.id] // Foreign Key to users
+  name varchar(100) [not null]
+  target_amount decimal(10,2) [not null]
+  current_amount decimal(10,2) [default: 0]
+  deadline date
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+  
+  Note: 'User goals that admins can monitor'
+}
+
+Table budget_limits {
+  id int [pk, increment] // Primary Key, Auto Increment
+  user_id int [not null, ref: > users.id] // Foreign Key to users
+  category_id int [not null, ref: > categories.id] // Foreign Key to categories
+  amount decimal(10,2) [not null]
+  period enum [not null, note: 'daily, weekly, monthly, yearly']
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+  
+  Note: 'Budget limits that admins can view and analyze'
+}
+
+// ADMIN SIDE FEATURES:
+// ===================
+// 1. User Management:
+//    - View all registered users
+//    - Update user information
+//    - Delete user accounts
+//    - Monitor user activity
+//    - View user details
+
+// 2. Data Analytics & Monitoring:
+//    - View all transactions across users
+//    - Monitor category usage
+//    - Analyze user financial patterns
+//    - Generate system-wide reports
+//    - Track user goals and achievements
+
+// 3. Admin Capabilities:
+//    - Secure admin login/logout
+//    - Full read access to user data
+//    - User account management
+//    - System settings configuration
+//    - Data cleanup and maintenance
+
+// 4. Administrative Views:
+//    - Admin dashboard with statistics
+//    - User management interface
+//    - Transaction monitoring
+//    - Category management
+//    - System health monitoring
+
+// 5. Security & Access Control:
+//    - Separate admin authentication
+//    - Protected admin routes
+//    - Session management for admins
+//    - No direct admin-user data relationships (admins manage, don't own user data)
+
+// 6. Key Admin Functions (Based on your files):
+//    - admin/dashboard.php - Overview of system metrics
+//    - admin/users.php - User management interface
+//    - admin/user_details.php - Individual user information
+//    - admin/transactions.php - Transaction monitoring
+//    - admin/categories.php - Category management
+//    - admin/settings.php - System configuration
+//    - admin/delete_user.php - User account removal
